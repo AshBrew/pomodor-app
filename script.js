@@ -1,13 +1,13 @@
-let timerDuration = 25 * 60; // default focus (seconds)
+let timerDuration = 25 * 60;
 let timeLeft = timerDuration;
 let timerInterval = null;
 let currentMode = 'focus';
 
 const timerDisplay = document.getElementById('timer');
 const startBtn = document.getElementById('start');
-const pauseBtn = document.getElementById('pause');
 const resetBtn = document.getElementById('reset');
-const modeButtons = document.querySelectorAll('.mode-buttons button');
+const fullscreenBtn = document.getElementById('fullscreen');
+const modeButtons = document.querySelectorAll('.modes button');
 
 function updateDisplay() {
   let minutes = Math.floor(timeLeft / 60);
@@ -53,9 +53,25 @@ function setMode(mode) {
   updateDisplay();
 }
 
-startBtn.addEventListener('click', startTimer);
-pauseBtn.addEventListener('click', pauseTimer);
+startBtn.addEventListener('click', () => {
+  if (timerInterval) {
+    pauseTimer();
+    startBtn.textContent = "Start";
+  } else {
+    startTimer();
+    startBtn.textContent = "Pause";
+  }
+});
+
 resetBtn.addEventListener('click', resetTimer);
+
+fullscreenBtn.addEventListener('click', () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+});
 
 modeButtons.forEach(btn => {
   btn.addEventListener('click', () => {
