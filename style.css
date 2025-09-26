@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f4f7f6;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app {
+  text-align: center;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 320px;
+}
+
+.title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+#timer {
+  font-size: 3rem;
+  margin: 1.5rem 0;
+  font-weight: bold;
+}
+
+.controls button, .mode-buttons button {
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  background: #e0f0e9;
+  color: #222;
+  transition: background 0.2s ease;
+}
+
+.controls button:hover, .mode-buttons button:hover {
+  background: #c7e6d6;
+}
+
+.mode-buttons {
+  margin-top: 1rem;
+}
+
+.mode-buttons button.active {
+  background: #4CAF50;
+  color: #fff;
+}
