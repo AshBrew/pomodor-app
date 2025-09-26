@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Timer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <main class="app">
+    <!-- Mode Selector -->
+    <div class="modes">
+      <button data-mode="focus" class="active">focus</button>
+      <button data-mode="short">short</button>
+      <button data-mode="long">long</button>
+    </div>
+
+    <!-- Timer -->
+    <div id="timer">25:00</div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="start" class="primary">start</button>
+      <button id="reset"><i data-lucide="rotate-ccw"></i></button>
+      <button id="fullscreen"><i data-lucide="maximize-2"></i></button>
+      <button id="settingsBtn"><i data-lucide="settings"></i></button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- Settings Modal -->
+<div id="settingsModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>timer settings</h2>
+    <label>
+      focus (minutes):
+      <input type="number" id="focusInput" value="25" min="1">
+    </label>
+    <label>
+      short break (minutes):
+      <input type="number" id="shortInput" value="5" min="1">
+    </label>
+    <label>
+      long break (minutes):
+      <input type="number" id="longInput" value="15" min="1">
+    </label>
+    <button id="saveSettings">save</button>
+  </div>
+</div>
+
+</body>
+</html>

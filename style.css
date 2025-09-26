@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --focus-color: #566d50;
+  --short-color: #3b82f6;
+  --long-color: #10b981;
+  --text-light: #afd1a3;
+  --text-light2: #709264;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: url("bg.jpg") no-repeat center center/cover;
+  font-family: 'Times New Roman', sans-serif;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modes {
+  margin: 1rem 0;
+}
+
+.modes button {
+  font-family: 'Times New Roman', sans-serif;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  color: var(--text-light);
+  padding: 0.4rem 1rem;
+  margin: 0 0.3rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modes button.active {
+  font-family: 'Times New Roman', sans-serif;
+  background: var(--focus-color);
+  border-color: var(--focus-color);
+  font-weight: 600;
+}
+
+#timer {
+  font-size: 6rem;
+  font-weight: 700;
+  margin: 1.5rem 0;
+}
+
+.controls {     
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.controls button.primary {
+  font-family: 'Times New Roman', sans-serif;
+  background: var(--focus-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-light)
+}
+
+/* --- Toolbar --- */
+.toolbar {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: rgba(0,0,0,0.3);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
+}
+
+.toolbar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.toolbar button:hover {
+  color: var(--focus-color);
+}
+
+/* Settings Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-light2);
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #1f1f1f;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: left;
+  width: 300px;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 1.3rem;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.3rem;
+  border-radius: 6px;
+  border: none;
+  margin-top: 0.2rem;
+  background: var(--focus-color);
+  color: var(--text-light);
+}
+
+.modal-content button {
+  margin-top: 1rem;
+  background: var(--focus-color);
+  color: #b1ec9a;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
