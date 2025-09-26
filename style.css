@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --focus-color: #7c3aed;   /* purple */
+  --short-color: #3b82f6;   /* blue */
+  --long-color: #10b981;    /* green */
+  --text-light: #fff;
+}
 
 * {
   margin: 0;
@@ -7,58 +14,113 @@
 }
 
 body {
+  height: 100vh;
+  width: 100%;
+  background: url("bg.jpg") no-repeat center center/cover;
   font-family: 'Inter', sans-serif;
-  background: #f4f7f6;
-  color: #222;
+  color: var(--text-light);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  text-align: center;
 }
 
 .app {
-  text-align: center;
-  background: #fff;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  width: 320px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.title {
+.question {
+  font-size: 1.2rem;
   margin-bottom: 1rem;
-  font-size: 1.5rem;
   font-weight: 600;
-  text-transform: lowercase;
+}
+
+.question input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed rgba(255,255,255,0.6);
+  color: white;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  padding: 0.2rem;
+  outline: none;
+}
+
+.modes {
+  margin: 1rem 0;
+}
+
+.modes button {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  color: white;
+  padding: 0.4rem 1rem;
+  margin: 0 0.3rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modes button.active {
+  background: var(--focus-color);
+  border-color: var(--focus-color);
+  font-weight: 600;
 }
 
 #timer {
-  font-size: 3rem;
+  font-size: 6rem;
+  font-weight: 700;
   margin: 1.5rem 0;
-  font-weight: bold;
 }
 
-.controls button, .mode-buttons button {
-  margin: 0.3rem;
-  padding: 0.5rem 1rem;
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.controls button {
+  background: none;
   border: none;
-  border-radius: 8px;
+  color: white;
+  font-size: 1.5rem;
   cursor: pointer;
+}
+
+.controls button.primary {
+  background: var(--focus-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  font-size: 1rem;
   font-weight: 600;
-  background: #e0f0e9;
-  color: #222;
-  transition: background 0.2s ease;
 }
 
-.controls button:hover, .mode-buttons button:hover {
-  background: #c7e6d6;
+/* --- Toolbar --- */
+.toolbar {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: rgba(0,0,0,0.3);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
 }
 
-.mode-buttons {
-  margin-top: 1rem;
+.toolbar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-.mode-buttons button.active {
-  background: #4CAF50;
-  color: #fff;
+.toolbar button:hover {
+  color: var(--focus-color);
 }
